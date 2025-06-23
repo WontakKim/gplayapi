@@ -50,3 +50,20 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.wontakkim"
+                artifactId = "gplayapi"
+                version = "1.0.0"
+                pom {
+                    name.set("gplayapi")
+                    description.set("")
+                }
+            }
+        }
+    }
+}
