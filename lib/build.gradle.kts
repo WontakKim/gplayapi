@@ -54,16 +54,19 @@ tasks.named<Test>("test") {
 afterEvaluate {
     publishing {
         publications {
-            register<MavenPublication>("release") {
-                from(components["release"])
+            create<MavenPublication>("maven") {
+                from(components["java"])
                 groupId = "com.github.wontakkim"
                 artifactId = "gplayapi"
                 version = "1.0.0"
                 pom {
-                    name.set("gplayapi")
-                    description.set("")
+                    name = "gplayapi"
+                    description = "gplayapi"
                 }
             }
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
