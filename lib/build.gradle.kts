@@ -58,7 +58,7 @@ afterEvaluate {
                 from(components["java"])
                 groupId = "com.github.wontakkim"
                 artifactId = "gplayapi"
-                version = "1.0.0"
+                version = "1.2.0"
                 pom {
                     name = "gplayapi"
                     description = "gplayapi"
