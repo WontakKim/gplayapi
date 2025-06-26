@@ -6,13 +6,12 @@
 
 package com.aurora.gplayapi.utils
 
-import kotlin.io.encoding.Base64
-import kotlin.io.encoding.ExperimentalEncodingApi
+import java.util.*
 
-@OptIn(ExperimentalStdlibApi::class, ExperimentalEncodingApi::class)
 internal object CertUtil {
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun decodeHash(base64EncodedHash: String): String {
-        return Base64.UrlSafe.decode(base64EncodedHash).toHexString()
+        return Base64.getUrlDecoder().decode(base64EncodedHash).toHexString()
     }
 }
